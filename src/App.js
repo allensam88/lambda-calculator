@@ -19,17 +19,21 @@ function App() {
 
   const [displayNums, setDisplayNums] = useState(0);
 
-
+  const display = () => {
+    setDisplayNums(displayNums)
+  }
 
   return (
     <div className="container">
-      <Logo />
+      <Logo className="logo"/>
       <div className="App">
         {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
         <Display />
-        <Numbers displayNums={displayNums}/>
+        <div className="spec_num_container">
+          <Specials />
+          <Numbers />
+        </div>
         <Operators />
-        <Specials />
       </div>
     </div>
   );
